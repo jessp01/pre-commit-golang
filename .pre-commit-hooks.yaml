@@ -98,4 +98,9 @@
     entry: run-go-ineffassign.sh
     files: '\.go$'
     language: 'script'
-    description: "Runs `ineffassign`, requires ineffassign"
+    description: "Runs `ineffassign`, requires github.com/gordonklaus/ineffassign"
+-   id: shellcheck
+    name: 'shellcheck'
+    entry: run-shellcheck.sh
+    language: 'script'
+    description: "Runs `shellcheck`, requires https://www.shellcheck.net"
