@@ -10,7 +10,7 @@ fi
 
 for FILE in "$@"; do
     set +e
-    if grep -q "^#\!.*sh" "$FILE";then
+    if file "$FILE"|grep -q "POSIX shell script" ;then
     set -e
 	shellcheck "$FILE"
     fi
