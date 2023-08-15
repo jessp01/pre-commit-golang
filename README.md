@@ -1,34 +1,28 @@
-pre-commit-golang
-=================
-
-:rotating_light: Please see the project sunsetting announcement:
-[Issues/98](https://github.com/dnephin/pre-commit-golang/issues/98)
-:rotating_light:
-
-----
-
+## pre-commit-golang
 golang hooks for http://pre-commit.com/
 
 ### Using these hooks
 
 Add this to your `.pre-commit-config.yaml`
 
-    - repo: https://github.com/dnephin/pre-commit-golang
-      rev: master
-      hooks:
-        - id: go-fmt
-        - id: go-vet
-        - id: go-lint
-        - id: go-imports
-        - id: go-cyclo
-          args: [-over=15]
-        - id: validate-toml
-        - id: no-go-testing
-        - id: golangci-lint
-        - id: go-critic
-        - id: go-unit-tests
-        - id: go-build
-        - id: go-mod-tidy
+```yml
+- repo: https://github.com/dnephin/pre-commit-golang
+    rev: master
+    hooks:
+    - id: go-fmt
+    - id: go-vet
+    - id: go-lint
+    - id: go-imports
+    - id: go-cyclo
+	args: [-over=15]
+    - id: validate-toml
+    - id: no-go-testing
+    - id: golangci-lint
+    - id: go-critic
+    - id: go-unit-tests
+    - id: go-build
+    - id: go-mod-tidy
+```
 
 ### Available hooks
 
