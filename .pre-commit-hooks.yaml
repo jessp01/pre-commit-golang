@@ -104,3 +104,8 @@
     entry: run-shellcheck.sh
     language: 'script'
     description: "Runs `shellcheck`, requires https://www.shellcheck.net"
+-   id: jsonlint
+    name: 'jsonlint'
+    entry: run-jsonlint.sh
+    language: 'script'
+    description: "Runs `jsonlint`, requires https://github.com/Seldaek/jsonlint"
