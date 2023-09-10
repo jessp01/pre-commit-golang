@@ -2,8 +2,9 @@
 
 set -eu -o pipefail
 
-if ! command -v gocyclo &> /dev/null ; then
-    echo "gocyclo not installed or available in the PATH" >&2
+CMD=gocyclo
+if ! command -v $CMD &> /dev/null ; then
+    echo "$CMD not installed or available in the PATH" >&2
     echo "please check https://github.com/fzipp/gocyclo" >&2
     exit 1
 fi
@@ -14,4 +15,4 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-exec gocyclo $@
+exec $CMD "$@"

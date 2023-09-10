@@ -4,11 +4,12 @@
 #
 set -e -o pipefail
 
-if ! command -v gofmt &> /dev/null ; then
-    echo "gofmt not installed or available in the PATH" >&2
+CMD=gofmt
+if ! command -v $CMD &> /dev/null ; then
+    echo "$CMD not installed or available in the PATH" >&2
     exit 1
 fi
 
-output="$(gofmt -l -w "$@")"
+output="$($CMD -l -w "$@")"
 echo "$output"
 [[ -z "$output" ]]

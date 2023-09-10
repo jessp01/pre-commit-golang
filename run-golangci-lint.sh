@@ -2,10 +2,11 @@
 
 set -eu -o pipefail
 
-if ! command -v golangci-lint &> /dev/null ; then
-    echo "golangci-lint not installed or available in the PATH" >&2
-    echo "please check https://github.com/golangci/golangci-lint" >&2
+CMD=golangci-lint
+if ! command -v $CMD &> /dev/null ; then
+    echo "$CMD not installed or available in the PATH" >&2
+    echo "please check https://github.com/golangci/$CMD" >&2
     exit 1
 fi
 
-exec golangci-lint run "$@"
+exec $CMD run "$@"
